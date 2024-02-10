@@ -2,11 +2,12 @@ import React, {useState } from 'react'
 import { useGetPostsQuery} from '../../api/postsApi';
 import { postsLimit, postsPortion } from '../../consts';
 import { dictionary } from '../../dictionary';
-import { List } from 'antd';
+import { List, Spin} from 'antd';
 import Title from '../Text/Title';
 import Description from '../Text/Description';
 import style from './style.module.scss'
 import ListController from '../ListController/ListController';
+import {Link} from 'react-router-dom';
 
 const Home = () => {
     const {postTitle, errorTitle} = dictionary
@@ -21,11 +22,11 @@ const Home = () => {
       setPage(prev => prev === postsLimit/postsPortion? prev : prev + 1)
     }
 
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>{errorTitle}</div>;
+    if (isLoading) return <Spin className={style.loading} size='large'/>;
+    if (error) return <div className={style.loading}><Title title={errorTitle}/></div>;
     return (
       <div className={style.home}>
-        <h1>{postTitle}</h1>
+        <Title title={postTitle}/>
         <List
           className={style.list}
           itemLayout="horizontal"
@@ -33,8 +34,8 @@ const Home = () => {
           renderItem={(item) => (
           <List.Item>
             <List.Item.Meta
-            title={<Title title={item.title} />}
-            description={<Description description={item.body} />}
+            title={<Link to={`post?id=${item.id}`} ><Title title={item.title} /></Link>}
+            description={<Description description={item.body}/>}
           />
           </List.Item>
         )}

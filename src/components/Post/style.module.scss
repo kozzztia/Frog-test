@@ -1,0 +1,22 @@
+
+.post{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.button{
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.article{
+    width : 70%;
+    margin : 10% auto;
+}
+
+.loading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

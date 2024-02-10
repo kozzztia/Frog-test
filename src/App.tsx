@@ -1,14 +1,16 @@
 import React from 'react';
-import MainLayout from './components/Layout/MainLayout';
 import Home from './components/Home';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Post from './components/Post/Post';
 
 function App() {
   return (
-    <div className="App">
-      <MainLayout>
-        <Home/>
-      </MainLayout>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path={`/post`} element={<Post />}/>
+      </Routes>       
+    </Router>
   );
 }
 

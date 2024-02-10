@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Layout } from 'antd';
+import { Button, Layout } from 'antd';
 import {dictionary} from '../../dictionary/index'
 import style from './style.module.scss';
 import { Footer } from 'antd/es/layout/layout';
@@ -15,7 +15,9 @@ const MainLayout : FC<MainLayoutProps>= ({children}) => {
   return (
     <Layout className={style.layout}>
       <Header className={style.header}>
+        
       {headerTitle}
+
       </Header>
       <Layout className={style.body}>
        {children}

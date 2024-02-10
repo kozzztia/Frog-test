@@ -8,9 +8,12 @@ export const postsApi = createApi({
   baseQuery: fetchBaseQuery({baseUrl: process.env.REACT_APP_API_URL}),
   endpoints: (builder) => ({
     getPosts: builder.query<PostType[], { page: number}>({
-      query: ({ page = 1}) => `?_limit=${postsPortion}&_page=${page}`,
+      query: ({ page = 1}) => `posts?_limit=${postsPortion}&_page=${page}`,
+    }),
+    getAboutPost: builder.query<PostType, { id: number}>({
+      query: ({id}) => `posts/${id}`,
     }),
   }),
 });
 
-export const { useGetPostsQuery} = postsApi;
+export const { useGetPostsQuery, useGetAboutPostQuery} = postsApi;
