@@ -1,0 +1,27 @@
+@import '../../styles/consts.scss';
+
+.box{
+    max-width :1600px;
+    position: fixed;
+    top : 50%;
+    width : inherit;
+    width :100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button{
+    font-size: x-large;
+    background-color:  $content-color;
+    color: $layout-color;
+    padding : $padding;
+    border : none;
+    outline: none;
+    cursor: pointer;
+    transition: 1s;
+    &:hover{
+        background-color: $layout-color;
+        color : $content-color;
+    }
+}

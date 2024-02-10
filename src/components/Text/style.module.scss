@@ -1,0 +1,13 @@
+@import '../../styles/consts.scss';
+
+.title{
+    width : 100%;
+    font-size: $title-size;
+    text-align: center;
+    text-transform: capitalize;
+}
+.description{
+    font-size: $font-size;
+    text-align: center
+    
+}
