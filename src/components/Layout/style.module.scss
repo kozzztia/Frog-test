@@ -1,0 +1,22 @@
+@import '../../styles/consts.scss';
+
+.layout {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    max-width: 1600px;
+    min-height: 100vh;
+    margin: 0 auto; 
+}
+
+.header {
+    text-align: 'center';
+    color: #fff;
+    background-color: #001529;
+}
+.footer {
+    text-align: 'center';
+    color: #fff;
+    background-color: #001529;
+}
+.body{
+    padding : $padding;
+}

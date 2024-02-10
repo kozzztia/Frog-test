@@ -1,10 +1,14 @@
 import React from 'react';
+import { MainLayout } from './components';
 
 function App() {
-  console.log(process.env.REACT_APP_API_URL)
   return (
     <div className="App">
-      hello
+      <MainLayout>
+        <div>
+          heloo
+        </div>
+      </MainLayout>
     </div>
   );
 }
