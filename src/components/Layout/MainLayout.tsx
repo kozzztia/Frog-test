@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button, Layout } from 'antd';
+import { Layout } from 'antd';
 import {dictionary} from '../../dictionary/index'
 import style from './style.module.scss';
 import { Footer } from 'antd/es/layout/layout';

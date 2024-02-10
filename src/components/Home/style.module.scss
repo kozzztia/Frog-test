@@ -1,3 +1,4 @@
+@import '../../styles/consts.scss';
 
 .home{
     position: relative;
@@ -6,8 +7,27 @@
     position: relative;
 }
 .loading{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: $padding;
+    text-align: center;
+}
+.headerControll{
+    display: flex;
+    flex-direction: row;
+    padding: $padding;
+}
+.refetch{
+    background: inherit;
+    font-size: x-large;
+    border : none;
+    outline: none;
+    width :40;
+    height: 40;
+    cursor: pointer;
+    transition: 2s;
+    padding : 0;
+    border-radius: 50%;
+    &:hover{
+        color : $layout-color;
+    }
+    
 }

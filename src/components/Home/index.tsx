@@ -2,17 +2,18 @@ import React, {useState } from 'react'
 import { useGetPostsQuery} from '../../api/postsApi';
 import { postsLimit, postsPortion } from '../../consts';
 import { dictionary } from '../../dictionary';
-import { List, Spin} from 'antd';
+import { Button, List, Spin} from 'antd';
 import Title from '../Text/Title';
 import Description from '../Text/Description';
 import style from './style.module.scss'
 import ListController from '../ListController/ListController';
 import {Link} from 'react-router-dom';
+import { RedoOutlined } from '@ant-design/icons';
 
 const Home = () => {
     const {postTitle, errorTitle} = dictionary
     const [page, setPage] = useState<number>(1);
-    const {data, error, isLoading} = useGetPostsQuery({page});
+    const {data, error, isLoading, refetch} = useGetPostsQuery({page});
 
     const handlerPrev = () => {
       setPage(prev => prev === 1? prev : prev -1)
@@ -22,11 +23,20 @@ const Home = () => {
       setPage(prev => prev === postsLimit/postsPortion? prev : prev + 1)
     }
 
+    const handleReloadData = () => {
+      refetch(); 
+  };
+
     if (isLoading) return <Spin className={style.loading} size='large'/>;
     if (error) return <div className={style.loading}><Title title={errorTitle}/></div>;
     return (
       <div className={style.home}>
-        <Title title={postTitle}/>
+        <div className={style.headerControll}>
+          <Title title={postTitle}/>
+          <Button onClick={handleReloadData} className={style.refetch}>
+            <RedoOutlined />
+          </Button>
+        </div>
         <List
           className={style.list}
           itemLayout="horizontal"

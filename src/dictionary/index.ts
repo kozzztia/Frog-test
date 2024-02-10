@@ -7,6 +7,7 @@ const dictionary = {
     postTitle : 'posts',
     footerContent: 'i use React/TS/rtkQuery/antDesign/Scss',
     back: 'go back',
+    refresh: 'refresh',
 
 }
 

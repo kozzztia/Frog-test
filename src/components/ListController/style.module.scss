@@ -19,9 +19,4 @@
     border : none;
     outline: none;
     cursor: pointer;
-    transition: 1s;
-    &:hover{
-        background-color: $layout-color;
-        color : $content-color;
-    }
 }
