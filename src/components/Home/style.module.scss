@@ -18,6 +18,9 @@
 .refetch{
     @include button-style;
 }
+.image{
+    @include image-style;
+}
 .pagination{
     position: sticky;
     bottom: 0;

@@ -37,7 +37,7 @@ const Home = () => {
         <div className={style.headerControll}>
           <Title title={postTitle}/>
           <Button onClick={handleReloadData} className={style.refetch}>
-            <RedoOutlined />
+            <RedoOutlined className={style.image}/>
           </Button>
         </div>
         <List

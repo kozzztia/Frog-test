@@ -12,10 +12,10 @@ const ListController: React.FC<ListControllerProps> = ({handlerPrev, handlerNext
   return (
     <div className={style.box}>
         <Button onClick={handlerPrev} className={style.button}>
-        <LeftOutlined />
+        <LeftOutlined className={style.image}/>
         </Button>
         <Button onClick={handlerNext} className={style.button}> 
-        <RightOutlined />
+        <RightOutlined className={style.image}/>
         </Button>
     </div>
   )
