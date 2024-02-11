@@ -2,7 +2,7 @@ import React, {useState } from 'react'
 import { useGetPostsQuery} from '../../api/postsApi';
 import { postsLimit, postsPortion } from '../../consts';
 import { dictionary } from '../../dictionary';
-import { Button, List, Spin} from 'antd';
+import { Button, List, Pagination, Spin} from 'antd';
 import Title from '../Text/Title';
 import Description from '../Text/Description';
 import style from './style.module.scss'
@@ -25,7 +25,10 @@ const Home = () => {
 
     const handleReloadData = () => {
       refetch(); 
-  };
+    };
+  const handlePageChange = (newPage: number) => {
+    setPage(newPage);
+}
 
     if (isLoading) return <Spin className={style.loading} size='large'/>;
     if (error) return <div className={style.loading}><Title title={errorTitle}/></div>;
@@ -51,6 +54,14 @@ const Home = () => {
         )}
         />
       <ListController handlerPrev={handlerPrev} handlerNext={handlerNext}/>
+      <Pagination
+                className={style.pagination}
+                current={page}
+                total={postsLimit}
+                pageSize={postsPortion}
+                onChange={handlePageChange}
+                showSizeChanger={false}
+            />
       </div>
     );
 }

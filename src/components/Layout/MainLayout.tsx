@@ -15,9 +15,7 @@ const MainLayout : FC<MainLayoutProps>= ({children}) => {
   return (
     <Layout className={style.layout}>
       <Header className={style.header}>
-        
       {headerTitle}
-
       </Header>
       <Layout className={style.body}>
        {children}

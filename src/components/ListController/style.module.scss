@@ -12,11 +12,5 @@
 }
 
 .button{
-    font-size: x-large;
-    background-color:  $content-color;
-    color: $layout-color;
-    padding : $padding;
-    border : none;
-    outline: none;
-    cursor: pointer;
+    @include button-style;
 }

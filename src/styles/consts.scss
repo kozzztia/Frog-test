@@ -3,4 +3,15 @@ $title-size: 25px;
 $font-size: 16px;
 $padding: 10px;
 $content-color: #fff;
-$layout-color: #001529;
+$layout-color: #030a6b;
+
+
+@mixin button-style {
+    font-size: x-large;
+    background-color:  $content-color;
+    color: $layout-color;
+    padding : $padding;
+    border : none;
+    outline: none;
+    cursor: pointer;
+}
